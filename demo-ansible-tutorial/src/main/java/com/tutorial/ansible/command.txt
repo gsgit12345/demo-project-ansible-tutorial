@@ -1,0 +1,2 @@
+---running playbook
+[iid@master-node project]$ ansible-playbook  firstplay.yaml -i /etc/ansible/inventory_group.txt

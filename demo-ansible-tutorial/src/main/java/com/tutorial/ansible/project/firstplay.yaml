@@ -1,0 +1,8 @@
+  -
+    name: this is the first playbook.we are going to create one simple file on webservers
+    hosts: webservers
+    tasks:
+      -
+        name: create a dummy file
+        #command: touch /tmp/playbook.txt
+        command: mkdir -p /tmp/playbookdir

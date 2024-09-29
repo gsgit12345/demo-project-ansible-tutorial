@@ -1,0 +1,11 @@
+  -
+    name:  executing multiple command on webserver
+    hosts: webservers
+    tasks:
+     -
+       name: creating file in temp directory
+       command: touch /tmp/second.txt
+     -
+       name: creating the directory
+       command: mkdir -p /tmp/second
+
