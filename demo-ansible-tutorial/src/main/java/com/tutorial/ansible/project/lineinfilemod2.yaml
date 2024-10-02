@@ -1,0 +1,16 @@
+-
+  name: demonstrat of line replacement in file
+  hosts: webservers
+  tasks:
+    -
+      name: replacement
+      lineinfile:
+        path: /tmp/firstplay.yaml
+        line: insert in yaml file
+        insertafter: ^newline
+        #state: present
+        #mode: 0644
+       # 3owner: ghanshyam
+
+
+

@@ -1,0 +1,27 @@
+-
+  name: demo of the copy module
+  hosts: webservers
+  tasks:
+    -
+      name: demonstration of copy module
+      copy: src=firstplay.yaml  dest=/tmp
+-
+
+          name: this is the copy directory
+          hosts: webservers
+          tasks:
+            -
+              name: demonstrate copy of dir
+              copy: src=/home/iid/project/nginx  dest=/tmp
+
+-
+         name: this is the back demo
+         hosts: webservers
+         tasks:
+           -
+             name: demonstrate the backup on the remote server
+             copy:
+               src: /home/iid/projects/nginx
+               dest: /tmp
+               backup: yes
+               remote_src: yes

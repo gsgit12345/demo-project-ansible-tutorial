@@ -1,0 +1,45 @@
+-
+  name: showing the file writing demo
+  hosts: webservers
+  tasks:
+    -
+      name: adding a line in the file
+      lineinfile:
+        path: /tmp/firstplay.yaml
+        line: this is new line added in file.this is password in the file
+        state: present
+        create: true
+-
+  name: replacing the line in the file
+  hosts: webservers
+  tasks:
+    -
+      name: this is the replacement demo
+      lineinfile:
+        path: /tmp/firstplay.yaml
+        regexp: ^this is
+        line: AllowPassword yes
+
+-
+  name: replacing the multiple line in the file
+  hosts: webservers
+  tasks:
+      - name: replacing the multiple line
+        lineinfile:
+            path: /tmp/firstplay.yaml
+            line: "{{item.line}}"
+            regexp: "{{item.regexp}}"
+        loop:
+          - line: new line yes
+            regexp: ^Alltimehigh
+
+#-
+ # name: removing the line
+ # hosts: webservers
+ # tasks:
+  #  -
+   #   name: remove line demonstration
+    #  lineinfile:
+     #   path: /tmp/firstplay.yaml
+      #  regexp: "this is new"
+       # state: absent

@@ -1,2 +1,4 @@
 ---running playbook
 [iid@master-node project]$ ansible-playbook  firstplay.yaml -i /etc/ansible/inventory_group.txt
+[iid@master-node project]$ ansible-lint -f copymodule.yaml  -i /etc/ansible/inventory_group.txt
+

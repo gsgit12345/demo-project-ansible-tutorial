@@ -1,0 +1,16 @@
+-
+  name: handling the script failure
+  hosts: localhost
+  tasks:
+    -
+      name: error handling
+      script: /home/iid/project/demo-project-ansible-tutorial/demo-ansible-tutorial/src/main/java/com/tutorial/ansible/project/sample.sh
+      register: failing_script_output
+      ignore_errors: yes
+
+    - name: handle script failure
+      debug:
+         msg: "script is failing .correct the script"
+      when: failing_script_output.fail
+
+

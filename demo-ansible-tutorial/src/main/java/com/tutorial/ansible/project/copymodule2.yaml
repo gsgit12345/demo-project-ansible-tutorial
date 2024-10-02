@@ -1,0 +1,10 @@
+-
+  name: advance example of copy module
+  hosts: webservers
+  tasks:
+    -
+      name: copying the directory recursively
+      copy:
+        src: /home/iid/project/demo-project-jenkin-code
+        dest: /tmp
+

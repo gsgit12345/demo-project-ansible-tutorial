@@ -1,0 +1,21 @@
+-
+  name: executing the shell script on the target server
+  hosts: webservers
+  tasks:
+    -
+      name: executing the shell script
+      script: /home/iid/project/demo-project-ansible-tutorial/demo-ansible-tutorial/src/main/java/com/tutorial/ansible/project/sample.sh
+      register: script_output
+
+    - name: display script output
+      debug:
+        var: script_output.stdout_lines
+
+    - name: pass variable to script
+      script: /home/iid/project/demo-project-ansible-tutorial/demo-ansible-tutorial/src/main/java/com/tutorial/ansible/project/sample.sh "{{mess}}"
+      register: variable_script_output
+
+    - name:  dispaly variable output
+      debug:
+        var: variable_script_output.stdout_lines
+
