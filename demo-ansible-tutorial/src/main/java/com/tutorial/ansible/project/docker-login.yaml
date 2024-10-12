@@ -1,0 +1,14 @@
+-
+  name:  executing multiple command on webserver
+  hosts: webservers
+  become: true
+  tasks:
+    -
+      name: creating file in temp directory
+      docker_login:
+        username: "gshukla123"
+        password: "gshukla123"
+
+
+
+

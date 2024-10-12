@@ -2,3 +2,8 @@
 [iid@master-node project]$ ansible-playbook  firstplay.yaml -i /etc/ansible/inventory_group.txt
 [iid@master-node project]$ ansible-lint -f copymodule.yaml  -i /etc/ansible/inventory_group.txt
 
+
+--install the below module to fix the problem.module not found
+ansible-galaxy collection install community.docker
+
+ansible-galaxy collection install community.general    --install the community edition in system
